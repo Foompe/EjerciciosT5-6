@@ -1,4 +1,5 @@
 package com.prog06_Principal;
+import com.prog06_Biblioteca.EjemplarLibro;
 import com.prog06_Figuras.Circulo;
 import com.prog06_Figuras.Rectangulo;
 import com.prog06_Figuras.Triangulo;
@@ -17,8 +18,8 @@ public class Principal {
             System.out.println("1. Rectangulo");
             System.out.println("2. Circulo");
             System.out.println("3. Triangulo");
-      /**       System.out.println("4. Opción 4");
-            System.out.println("5. Opción 5");
+            System.out.println("4. Libro");
+     /**       System.out.println("5. Opción 5");
             System.out.println("6. Opción 6");
             System.out.println("7. Opción 7");
             System.out.println("8. Opción 8");
@@ -72,7 +73,22 @@ public class Principal {
                     System.out.println(t1);
                     break;
                 case 4:
-                    System.out.println("***** ***** RECTANGULO ***** *****");
+                    System.out.println("***** ***** LIBRO ***** *****");
+                    System.out.println("Creamos 4 libros...");
+                    EjemplarLibro e1 = new EjemplarLibro("El nombre del viento");
+                    EjemplarLibro e2 = new EjemplarLibro("El temor de un hombre sabio");
+                    EjemplarLibro e3 = new EjemplarLibro(e1);
+                    EjemplarLibro e4 = new EjemplarLibro("Nacidos de la bruma");
+
+                    System.out.println("Simulamos prestamos y deboluciones\n");
+                    e1.prestar();
+                    e2.devolver();
+                    e3.prestar();
+                    e1.devolver();
+                    e3.prestar();
+
+                    System.out.println("\nMostramos los datos de cada libro creado:\n" +
+                            " Libro 1:" + e1 + "\n Libro 2: " + e2 + "\n Libro 3 " + e3 + "\n Libro 4: " + e4);
                     break;
                 case 5:
                     System.out.println("***** ***** RECTANGULO ***** *****");

@@ -4,6 +4,10 @@ import com.prog06_Figuras.Circulo;
 import com.prog06_Figuras.Rectangulo;
 import com.prog06_Figuras.Triangulo;
 
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -19,14 +23,15 @@ public class Principal {
             System.out.println("2. Circulo");
             System.out.println("3. Triangulo");
             System.out.println("4. Libro");
-     /**       System.out.println("5. Opción 5");
-            System.out.println("6. Opción 6");
+            System.out.println("5. Fechas");
+      /**       System.out.println("6. Opción 6");
             System.out.println("7. Opción 7");
             System.out.println("8. Opción 8");
             System.out.println("9. Opción 9");
             System.out.println("10. Salir");
 */
             option = sc.nextInt();
+            sc.nextLine();
 
             switch (option) {
                 case 1:
@@ -91,7 +96,39 @@ public class Principal {
                             " Libro 1:" + e1 + "\n Libro 2: " + e2 + "\n Libro 3 " + e3 + "\n Libro 4: " + e4);
                     break;
                 case 5:
-                    System.out.println("***** ***** RECTANGULO ***** *****");
+                    System.out.println("***** ***** FECHAS ***** *****");
+                    System.out.println("Parte A:\nIntroduce tu fecha de nacimiento en formato AAAA-MM-DD");
+                    String fechaC = sc.nextLine();
+                    LocalDate fechaCumple = LocalDate.parse(fechaC); //pasamos la entrada de teclado a tipo fecha
+                    LocalDate fechaActual = LocalDate.now();  //tomamos la fecha de hoy para los calculos
+                    long dias = fechaCumple.until(fechaActual, ChronoUnit.DAYS); //calculamos los dias que han pasado
+                    System.out.println("Desde tu cumpleaños el día " + fechaCumple + " han pasado " + dias + " días");
+
+                    System.out.println("Parte B:\nIntroduce un número de dias para sumar a tu fecha anterior");
+                    long diasSuma = sc.nextLong();
+                    sc.nextLine(); //para recoger el enter y que no de problemas a futuro
+                    fechaCumple = fechaCumple.plus(diasSuma,ChronoUnit.DAYS);
+                    System.out.println("Has sumado " + diasSuma + " días. La fecha ahora es: " + fechaCumple);
+
+                    System.out.println("Parte C:\nIntroducir dos horas de reloj y que nos de la diferencia en segundos");
+                    System.out.println("Introduce la primera hora en formato hh:mm:ss");
+                    String hora1 = sc.nextLine();
+                    System.out.println("Introduce la segunda hora en formato hh:mm:ss");
+                    String hora2 = sc.nextLine();
+
+                    //pasamos los string a formato hora
+                    LocalTime h1 = LocalTime.parse(hora1);
+                    LocalTime h2 = LocalTime.parse(hora2);
+
+                    //calculamos la diferencia en segundos entre ambas horas
+                    Duration diferencia = Duration.between(h1,h2);
+                    long segundos = diferencia.getSeconds(); //pasamos la diferencia a segundos
+
+                    //mostramos en pantalla
+                    System.out.println("La diferencia entre las dos horas son: " + segundos + " sec");
+                    System.out.println("diferencia calcula: " + diferencia);
+
+
                     break;
                 case 6:
                     System.out.println("***** ***** RECTANGULO ***** *****");

@@ -31,7 +31,7 @@ public class Cuenta {
         this.titular = titular;
     }
 
-    //metodo to string
+    //metodo to string (este es override porque sobreescribe el metodo de la clase object
     @Override
     public String toString() {
         return "Los parametros de Cuenta son:\n Titular: " + titular + "\n Cantidad: " + cantidad;

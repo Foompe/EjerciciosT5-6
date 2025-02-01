@@ -149,7 +149,6 @@ public class Principal {
                     }
 
                     System.out.println("El año: " + anosc + " tiene " + contadorDomingos + " Domingos");
-
                     System.out.println("Parte F:\nIndica el día de la semana del 31 de diciembre de los ultimos 5 años");
                     //tomamos la fecha actual
                     LocalDate fechaActual2 = LocalDate.now();

@@ -4,6 +4,7 @@ import com.prog06_Figuras.Circulo;
 import com.prog06_Figuras.Rectangulo;
 import com.prog06_Figuras.Triangulo;
 
+import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -24,8 +25,8 @@ public class Principal {
             System.out.println("3. Triangulo");
             System.out.println("4. Libro");
             System.out.println("5. Fechas");
-      /**       System.out.println("6. Opción 6");
-            System.out.println("7. Opción 7");
+             System.out.println("6. Fechas 2");
+       /**      System.out.println("7. Opción 7");
             System.out.println("8. Opción 8");
             System.out.println("9. Opción 9");
             System.out.println("10. Salir");
@@ -126,12 +127,40 @@ public class Principal {
 
                     //mostramos en pantalla
                     System.out.println("La diferencia entre las dos horas son: " + segundos + " sec");
-                    System.out.println("diferencia calcula: " + diferencia);
 
+                    System.out.println("Parte D:\nIntroducir una fecha y mostrar el dia de la semana que le corresponde");
+                    DayOfWeek diafechacumple = fechaCumple.getDayOfWeek();
+                    System.out.println("Tomamos la fecha de cumpleaños que pertenece el dia: " + diafechacumple);
 
                     break;
                 case 6:
-                    System.out.println("***** ***** RECTANGULO ***** *****");
+                    System.out.println("***** ***** FECHAS 2 ***** *****");
+                    System.out.println("Calculo de domingos en el año.\nIntroduce año:");
+                    int anosc= sc.nextInt();
+                    sc.nextLine();
+                    LocalDate fecha = LocalDate.of(anosc,1,1);
+                    int contadorDomingos = 0;
+
+                    while (fecha.getYear() == anosc) { //mientras el año sea 2025 se dara el bucle
+                        if (fecha.getDayOfWeek() == DayOfWeek.SUNDAY) { //si el dia de la semana es domingo
+                            contadorDomingos++; //se suma uno en el contador
+                        }
+                        fecha = fecha.plusDays(1); //sumamos uno a la fecha
+                    }
+
+                    System.out.println("El año: " + anosc + " tiene " + contadorDomingos + " Domingos");
+
+                    System.out.println("Parte F:\nIndica el día de la semana del 31 de diciembre de los ultimos 5 años");
+                    //tomamos la fecha actual
+                    LocalDate fechaActual2 = LocalDate.now();
+                    System.out.println("Teniendo en cuenta que la fecha actual es: " + fechaActual2);
+                    //en vase a esta fecha calcular los ultimos 5 años
+                    for(int i= 1; i < 6; i++) {
+                      int anoAct = fechaActual2.getYear();
+                      LocalDate anoCal = LocalDate.of((anoAct - i),12,31);
+                        System.out.println("El 31 de Diciembre del año " + anoCal.getYear() + " era " + anoCal.getDayOfWeek());
+                    }
+
                     break;
                 case 7:
                     System.out.println("***** ***** RECTANGULO ***** *****");

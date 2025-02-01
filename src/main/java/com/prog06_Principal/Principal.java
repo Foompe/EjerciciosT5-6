@@ -1,5 +1,6 @@
 package com.prog06_Principal;
 import com.prog06_Biblioteca.EjemplarLibro;
+import com.prog06_Escuela.Alumno;
 import com.prog06_Figuras.Circulo;
 import com.prog06_Figuras.Rectangulo;
 import com.prog06_Figuras.Triangulo;
@@ -26,8 +27,8 @@ public class Principal {
             System.out.println("4. Libro");
             System.out.println("5. Fechas");
              System.out.println("6. Fechas 2");
-       /**      System.out.println("7. Opción 7");
-            System.out.println("8. Opción 8");
+             System.out.println("7. Alumno");
+        /**     System.out.println("8. Opción 8");
             System.out.println("9. Opción 9");
             System.out.println("10. Salir");
 */
@@ -162,7 +163,55 @@ public class Principal {
 
                     break;
                 case 7:
-                    System.out.println("***** ***** RECTANGULO ***** *****");
+                    System.out.println("***** ***** ALUMNO ***** *****");
+                    System.out.println("Creamos tres alumnos, el primero y el segundo iguales  y el tercero diferente");
+
+                    Alumno a1 = new Alumno("Ruben","Suarez", "Gonzalez", "123456789A", 16,8,1993);
+                    Alumno a2 = new Alumno("Ruben", "Suarez", "Gonzalez", "123456789A", 16, 8, 1993);
+                    Alumno a3 = new Alumno("Roberto", "Jose", "Luzbet", "123456789C", 11, 9, 2024);
+                    Alumno a4 = new Alumno("Roberto", "Suarez", "Gonzalez", "123456789A", 16, 8, 1993);
+
+                    System.out.println("Mostramos datos de cada alumno" +
+                            "\nAlumno 1:\n" + a1 +
+                            "\n\nAlumno 2:\n" + a2 +
+                            "\n\nAlumno 3:\n" + a3 +
+                            "\n\nAlumno 4:\n" + a4);
+
+
+                    System.out.println("\nVemos si alumno 1 es mayor de edad");
+                    if (a1.mayorEdad()) {
+                        System.out.println("Es mayor de edad");
+                    } else {
+                        System.out.println("No es mayor de edad");
+                    }
+                    System.out.println("\nHacemos lo mismo con alumno 3");
+                    if (a3.mayorEdad()) {
+                        System.out.println("Es mayor de edad");
+                    } else {
+                        System.out.println("No es mayor de edad");
+                    }
+
+                    System.out.println("\nComparamos si alumno1 es mayor que alumno 3");
+                    if (a1.esMayorQue(a3)) {
+                        System.out.println("a1 es mayor que a3");
+                    } else {
+                        System.out.println("a1 es menor que a3");
+                    }
+
+                    System.out.println("\nComparamos los datos de los alumnos a1 y a3 para ver si son el mismo");
+                    if (a1.esIgual(a3)) {
+                        System.out.println("a1 es igual a a3");
+                    } else {
+                        System.out.println("a1 es diferente de a3");
+                    }
+
+                    System.out.println("\nComparamos ahora a a1 con a2");
+                    if (a1.esIgual(a2)) {
+                        System.out.println("a1 es igual a a2");
+                    } else {
+                        System.out.println("a1 es diferente de a2");
+                    }
+
                     break;
                 case 8:
                     System.out.println("***** ***** RECTANGULO ***** *****");

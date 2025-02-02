@@ -26,12 +26,12 @@ public class Principal {
             System.out.println("3. Triangulo");
             System.out.println("4. Libro");
             System.out.println("5. Fechas");
-             System.out.println("6. Fechas 2");
-             System.out.println("7. Alumno");
-             System.out.println("8. Cadenas");
-         /**   System.out.println("9. Opción 9");
+            System.out.println("6. Fechas 2");
+            System.out.println("7. Alumno");
+            System.out.println("8. Cadenas");
+            System.out.println("9. StringBuilder");
             System.out.println("10. Salir");
-*/
+
             option = sc.nextInt();
             sc.nextLine();
 
@@ -318,7 +318,38 @@ public class Principal {
 
                     break;
                 case 9:
-                    System.out.println("***** ***** RECTANGULO ***** *****");
+                    System.out.println("***** ***** STRINGBUILDER ***** *****");
+
+                    System.out.println("\n17\nTomar una cadena por teclado y convertirla a StringBuilder");
+                    System.out.println("Introduce una cadena");
+                    String cadena = sc.nextLine();
+                    StringBuilder build = new StringBuilder(cadena);
+                    System.out.println("Cadena original " + build);
+
+                    System.out.println("\nParte A:\nBorrar el caracter de la posicion 3");
+                    build.deleteCharAt(3);
+                    System.out.println("Cadena despues de borrar: " +build);
+
+                    System.out.println("\nParte B:\nInsetar una x en las posicion 5");
+                    build.insert(5,"x");
+                    System.out.println("Cadena despues de añadir: " + build);
+
+                    System.out.println("\nParte C:\nSustituir el caracter de la posicion 1 por una z");
+                    build.setCharAt(1,'z');
+                    System.out.println("Cadena depues del cambio " + build);
+
+                    System.out.println("\nParte D:\nBorrar los caracteres de la posicion 5 y 10");
+                    build.delete(5,10);
+                    System.out.println("Cadena depues de borrar " + build);
+
+                    System.out.println("\nParte E:\nDarles la vuelta a todos los caracteres del Stringbuilder");
+                    build.reverse();
+                    System.out.println("Cadena del reves " + build);
+
+                    System.out.println("\nParte F:\nConvertir el StringBuilder en cadena");
+                    String cadena2 = build.toString();
+                    System.out.println("Cadena convertida a String: " + cadena2);
+
                     break;
                 case 10:
                     //cierra el programa

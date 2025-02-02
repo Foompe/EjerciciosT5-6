@@ -28,8 +28,8 @@ public class Principal {
             System.out.println("5. Fechas");
              System.out.println("6. Fechas 2");
              System.out.println("7. Alumno");
-        /**     System.out.println("8. Opción 8");
-            System.out.println("9. Opción 9");
+             System.out.println("8. Cadenas");
+         /**   System.out.println("9. Opción 9");
             System.out.println("10. Salir");
 */
             option = sc.nextInt();
@@ -214,7 +214,108 @@ public class Principal {
 
                     break;
                 case 8:
-                    System.out.println("***** ***** RECTANGULO ***** *****");
+                    System.out.println("***** ***** CADENAS ***** *****");
+                    System.out.println("Introduce una cadena de caracteres:");
+                    String cad1 = sc.nextLine();
+                    System.out.println("Mostramos la cadena:\n En minusculas: " + cad1.toLowerCase() +
+                            "\n En mayusculas: " + cad1.toUpperCase());
+
+                    System.out.println("Parte B:\nBuscar si en la cadena aparece una letra");
+                    String letra = sc.nextLine();
+                    if (cad1.contains(letra)) {
+                        System.out.println("Contiene la letra " + letra);
+                    } else {
+                        System.out.println("No contiene la letra " + letra);
+                    }
+
+                    System.out.println("Parte C:\nCalcular si la letra tiene mas de 10 posiciones");
+                    if (cad1.length() > 10) {
+                        System.out.println("La palabra es mayor de 10 letras");
+                    } else {
+                        System.out.println("La palabra es menor o igual que 10");
+                    }
+
+                    System.out.println("Parte D:\nDecir si la dadena contiene un cararter a escoger a partir de la 4 posición");
+                    System.out.println("Introduce el caracter que quieras buscar a partir de la 4 posiciçon");
+                    String letra2 = sc.nextLine();
+                    char l2 = letra2.charAt(0);
+                    boolean contiene = false;
+                    for (int i = 4; i < cad1.length(); i++) {  //usamos este bucle para recorrer la distnacia total de la cadena
+                        if (cad1.charAt(i) == l2) { //comprobamos a partir de la 4 posicion si coincide con la letra escogida
+                            contiene = true;        //si coincide se pasa a true y se imprime el mensaje
+                        }
+                    }
+                    if (contiene) {
+                        System.out.println("La palabra -" + cad1 + "- contriene la letra -" + l2 + "- a partir de la 4 posicion");
+                    } else {
+                        System.out.println("No contiene la letra");
+                    }
+
+                    System.out.println("\nParte E:\nCrea una cadena formada por las primeras 5 posiciones de la cadena");
+                    String cadRes = cad1.substring(0,5);
+                    System.out.println("Cadena resultado: " + cadRes);
+
+                    System.out.println("\nParte F:\nCrea una cadena formada por las 5 ultimas posiciones y ver si es igual que hola");
+                    int inicio = (cad1.length() - 5);
+                    int fin = cad1.length();
+                    String cadFin = cad1.substring(inicio,fin);
+                    System.out.println("Cadena final: " + cadFin);
+                    if (cadFin.equalsIgnoreCase("hola")) {
+                        System.out.println("Es igual a hola");
+                    } else {
+                        System.out.println("No es igual a hola");
+                    }
+
+                    System.out.println("\nParte H:\nConvertir una cadena de numero a formato int");
+                    System.out.println("Introduce una cadena de numeros");
+                    String cadNum = sc.nextLine();
+                    int trans = Integer.parseInt(cadNum);
+                    System.out.println("Cadena texto introcucida: " + cadNum + "\nConversion a formato numerico: " + trans);
+
+                    System.out.println("\nParte J:\nPasar una cadena de texto hexadecimal a formato numerico");
+                    String numHex = "1A3F";
+                    int numeroHex = Integer.parseInt(numHex,16); //el 16 representa la base hexadecimal
+                    System.out.println("El String: " + numHex + " representa: " + numeroHex);
+
+                    System.out.println("\nParte J:\nBuscar en el interior de un String la palabra prueva y sustituirla por prueba");
+                    String s2 = "jsalksjdpruevaasodkj";
+                    System.out.println("String pasado: " + s2);
+                    s2 = s2.replace("prueva","prueba");
+                    System.out.println("String con cambio: " + s2);
+
+                    System.out.println("\nParte k:\nComprobar si la primera posicion de la cadena es igual a la ultima");
+                    System.out.println("Introduce una cadena");
+                    String f2 = sc.nextLine();
+                    //solucion A: pasar la primera y ultima posicion del String a char y despues compararlos
+                    char primerCaracter = f2.charAt(0);
+                    char ultimoCaracter = f2.charAt(f2.length() - 1);
+                    if (primerCaracter ==  ultimoCaracter) {
+                        System.out.println("El primer caracter y el ultimo son el mismo en " + s2);
+                    } else {
+                        System.out.println("El primer y ultimo caracter son diferentes");
+                    }
+                    //solucion B: usar substring:
+                    String primerCaracter1 = f2.substring(0, 1);
+                    String ultimoCaracter1 = f2.substring(f2.length() - 1);
+                    if (primerCaracter1.equals(ultimoCaracter1)) {
+                        System.out.println("El primer y último carácter son IGUALES.");
+                    } else {
+                        System.out.println("El primer y último carácter son DIFERENTES.");
+                    }
+
+                    System.out.println("\nParte K:\nDecir cuantos digitos numericos hay en la cadena");
+                    String cadDig = "ñfokjhd5fd4gdfgd5g4d";
+                    System.out.println("Tomaremos la cadena " + cadDig);
+                    int contador = 0;
+                    for (int i = 0; i < cadDig.length(); i++) {
+                        char caracter = cadDig.charAt(i);
+
+                        if (Character.isDigit(caracter)) { //comprueba si el caracter pasado es un digito
+                            contador++;
+                        }
+                    }
+                    System.out.println("Contiene " + contador + " numeros");
+
                     break;
                 case 9:
                     System.out.println("***** ***** RECTANGULO ***** *****");
